@@ -1,0 +1,68 @@
+{
+  "name": "pcomvp-desktop",
+  "version": "0.1.0",
+  "description": "PCOMVP Electron App",
+  "main": "./dist/main.js",
+  "scripts": {
+    "check-lint": "eslint --ext .js,.jsx,.tsx,.ts . --quiet --cache",
+    "fix-lint": "eslint --ext .js,.jsx,.tsx,.ts . --quiet --cache --fix",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
+    "pack": "electron-builder --dir ",
+    "build:mac": "npm run production && env DEBUG=electron-builder && electron-builder --dir && electron-builder --mac",
+    "build:win": "npm run production && electron-builder --dir && electron-builder --win",
+    "build:linux": "npm run production && electron-builder --dir && electron-builder --linux",
+    "build": "npm run production && electron-builder --dir && electron-builder -mwl",
+    "react:dev": "webpack serve --config ./config/webpack.dev.js --stats-error-details",
+    "electron:dev": "webpack --config ./config/webpack.electron.js && electron .",
+    "production": "webpack  --config ./config/webpack.prod.js",
+    "dev": "concurrently --kill-others \"npm run react:dev\" \"npm run electron:dev\"",
+    "start": "npm run build && electron dist/main.js"
+  },
+  "repository": "git+https://github.com/coltoneshaw/PCOMVP-Desktop.git",
+  "author": "coltoneshaw <coltoneshaw@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coltoneshaw/PCOMVP-Desktop/issues"
+  },
+  "homepage": "https://github.com/coltoneshaw/PCOMVP-Desktop#readme",
+  "packageManager": "yarn@3.2.0",
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "concurrently": "^7.1.0",
+    "electron": "^18.2.0",
+    "electron-builder": "^23.0.3",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-notarize": "^1.2.1",
+    "electron-rebuild": "^3.2.7",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "sass-loader": "^12.6.0",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependenciesMeta": {
+    "eslint@8.14.0": {
+      "unplugged": true
+    }
+  },
+  "dependencies": {
+    "electron-log": "^4.4.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0"
+  }
+}

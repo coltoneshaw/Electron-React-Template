@@ -1,0 +1,56 @@
+productName: "Electron React Template"
+appId: com.electron.electronReactTemplate
+
+artifactName: "${name}-${version}-${os}-${arch}.${ext}"
+# afterSign: "scripts/notarize.js"
+
+directories:
+  output: "release"
+
+mac:
+  # https://developer.apple.com/documentation/bundleresources/information_property_list/lsapplicationcategorytype
+  category: "public.app-category.developer-tools"
+  target:
+    - "dmg"
+    - "zip"
+  type: "distribution"
+  darkModeSupport: true
+  hardenedRuntime: true
+  entitlements: "build/entitlements.mac.plist"
+  entitlementsInherit: "build/entitlements.mac.plist"
+  gatekeeperAssess: true
+  # provisioningProfile: "build/MacAppStore.provisionprofile"
+  icon: "assets/icons/icons.icns"
+  # extraFiles:
+  #   - "build/MacAppStore.provisionprofile"
+
+mas:
+  entitlements: "build/entitlements.mas.plist"
+  entitlementsInherit: "build/entitlements.mas.plist"
+  # provisioningProfile: "build/MacAppStore.provisionprofile"
+  hardenedRuntime: true
+  icon: "assets/icons/icons.icns"
+
+dmg:
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: "link"
+      path: "/Applications"
+  icon: "assets/icons/icons.icns"
+
+win:
+  icon: "assets/icons/icons.ico"
+  publisherName: "Colton"
+  target: "NSIS"
+
+nsis:
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+linux:
+  icon: "assets/icons"
+
+
