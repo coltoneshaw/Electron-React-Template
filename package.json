@@ -1,7 +1,7 @@
 {
-  "name": "pcomvp-desktop",
+  "name": "electron-react-template",
   "version": "0.1.0",
-  "description": "PCOMVP Electron App",
+  "description": "Electron React Template",
   "main": "./dist/main.js",
   "scripts": {
     "check-lint": "eslint --ext .js,.jsx,.tsx,.ts . --quiet --cache",
@@ -18,13 +18,13 @@
     "dev": "concurrently --kill-others \"npm run react:dev\" \"npm run electron:dev\"",
     "start": "npm run build && electron dist/main.js"
   },
-  "repository": "git+https://github.com/coltoneshaw/PCOMVP-Desktop.git",
+  "repository": "git+https://github.com/coltoneshaw/Electron-React-Template.git",
   "author": "coltoneshaw <coltoneshaw@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coltoneshaw/PCOMVP-Desktop/issues"
+    "url": "https://github.com/coltoneshaw/Electron-React-Template/issues"
   },
-  "homepage": "https://github.com/coltoneshaw/PCOMVP-Desktop#readme",
+  "homepage": "https://github.com/coltoneshaw/Electron-React-Template#readme",
   "packageManager": "yarn@3.2.0",
   "devDependencies": {
     "@types/node": "^17.0.31",
